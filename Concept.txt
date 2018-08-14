@@ -1,0 +1,19 @@
+Using entity framework and mvc 5, create a web application that will allow a soldier to fill out and complete
+a leave packet. I also want that same soldier(user) to get that same packet approved by their 
+1st Sergeant(admin/manager type), or if they are missing or ommitting critical information, deny said packet and notify
+the soldier that the packet must be redone. I'd like to use a text/email api to send information if the packet is approved
+or denied, use an api or webcrawler to gather the necessary DA forms and display them in the views. These views would then
+allow the user to fill out and submit the forms, then when complete, send in the packet for approval.
+I would also like the admin/manager to be able to submit a specific template that would set the number/type of forms needed
+for the soldier's leave packet to be complete. The application would also implement a googlemaps api to plan routes if driving.
+If flying, I plan to incorporate necessary flight information(either grabbing a flight itinerary or just have them submit
+that data into another form.) 
+ 
+This project idea comes from having to deal with a very roundabout and a poorly implemented website from when 
+I was in the Army when I had to apply for leave(vacation essentially). Everytime I submitted packets for leave, the required
+forms would change and I'd either have to submit a new packet with forms I didnt have, or resubmit again because I had forms
+that weren't required. All of the forms were submitted by hand since only the route map was available online. The concept
+is to gather all of this information/data into one web application, and make it a much smoother process then what is currently implemented.
+The army just recently got rid of the old TRiPs website last year so there is a need to make an application that can handle this.
+(Also, everything that I plan on using, such as differnt DA(department of the army) forms, are all unclassified and can be found on
+multiple websites that have no affiliation with the US Army or Department of Defense.)

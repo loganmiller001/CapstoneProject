@@ -1,0 +1,23 @@
+(For the purposes of this project, Roles will have specific names in terms of identifying the person's position inside
+a company, i.e. the admin will be a company commander, a overall manager approving packets will be a company 1st sergeant,
+an enlisted soldier submitting a packet will be a user. Rank/Grade itself will be a property within the models.)
+
+As a Company 1st Sergeant, I want to be able to deny a packet if the packet submitted does not have all required fields or ommits critical information.
+As a Company 1st Sergeant, I want, after reviewing a submitted packet, to either approve or deny a packet and send a message back to the soldier relaying the status of their packet(email api).
+As a Company 1st Sergeant, I want to view any of my soldiers uploaded files/forms and view them to make sure all information is correct(pdf.js).
+As a Company 1st Sergeant, I want to be able to view any soldiers route to their home of record or place taking leave(googlemaps api).
+As a Company 1st Sergeant, I want to recieve a message whenever a completed packet is submitted and awaiting approval(email api).
+As a Company Commander, I will have the final say on packets and be able to either approve or deny a packet regardless of its current status(also send out a specific message as to why this is occuring. (email api))
+As a Company Commander, I will set the start/end dates for the specific leave created.
+
+As a soldier, I want to be able to register my personal information into an account to store that data for future use.
+As a soldier, I want to view my information when logging in to confirm that all information is correct and edit any information as needed.
+As a soldier, I want to be able to select how many days I will be taking on this leave.
+As a soldier, and I am driving to my destination, I want to be able to create a route from my duty station(starting point) to my leave destination using googlemaps(googlemaps api).
+As a soldier, and I am driving, I will also upload an up-to-date personal vehicle (POV) inspection sheet(pdf.js).
+As a soldier, and I am flying to my destination, I want to be able to submit a flight itinerary to display when and where my leave will be spent(pdf.js if needed).
+As a soldier, I want to recieve a confirmation message that my packet has successfully been recieved(emailapi).
+As a solider, I want to upload a DA 31 Request and Authority for leave form(pdf.js).
+As a soldier, I want to upload a Leave and Earning Statement and be able to view it(pdf.js).
+
+
