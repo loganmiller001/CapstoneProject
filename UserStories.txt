@@ -7,6 +7,8 @@ As a Company 1st Sergeant, I want, after reviewing a submitted packet, to either
 As a Company 1st Sergeant, I want to view any of my soldiers uploaded files/forms and view them to make sure all information is correct(pdf.js).
 As a Company 1st Sergeant, I want to be able to view any soldiers route to their home of record or place taking leave(googlemaps api).
 As a Company 1st Sergeant, I want to recieve a message whenever a completed packet is submitted and awaiting approval(email api).
+As a Company 1st Sergeant, I want to recieve notifications whenever a soldier's flight is delayed or canceled, and if the flight arives/leaves on schedule(via flightaware api).
+
 As a Company Commander, I will have the final say on packets and be able to either approve or deny a packet regardless of its current status(also send out a specific message as to why this is occuring. (email api))
 As a Company Commander, I will set the start/end dates for the specific leave created.
 
@@ -20,4 +22,9 @@ As a soldier, I want to recieve a confirmation message that my packet has succes
 As a solider, I want to upload a DA 31 Request and Authority for leave form(pdf.js).
 As a soldier, I want to upload a Leave and Earning Statement and be able to view it(pdf.js).
 
+
+As a soldier, I want an option to use a widget/link that will take me to a travel site to make flight travel plans if needed(skyscanner).
+As a Company 1st Sergeant, I want to recieve notifications whenever a soldier's flight is delayed or canceled, and if the flight arives/leaves on schedule(via flightaware api).
+As a Company Commander/soldier, I want the ability to check a specific soldier's flight status using the flightaware api.
+As a soldier, I want the ability to see the current weather of the airport I am flying out of (flightaware).
 
