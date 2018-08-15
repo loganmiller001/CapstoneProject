@@ -17,7 +17,7 @@ namespace Capstone.Controllers
         public ActionResult Index()
         {
             var userId = User.Identity.GetUserId();
-            var soldierInfo = (from c in db.Soldiers where c.SoldierId.Equals(userId) select c);
+            var soldierInfo = (from c in db.Soldiers where c.ApplicationUserId.Equals(userId) select c);
             soldierInfo.ToList();
             return View(soldierInfo);
         }
@@ -67,7 +67,7 @@ namespace Capstone.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditPersonalInformation([Bind(Include = "SoldierId,FirstName,LastName,Rank,SocialSecurityNumber,UnitNumber,Division,Leadership")] Soldier soldier)
+        public ActionResult EditPersonalInformation([Bind(Include = "SoldierId,FirstName,LastName,Rank,SocialSecurityNumber,UnitNumber,Division,Leadership,ApplicationUserId")] Soldier soldier)
         {
             if (ModelState.IsValid)
             {

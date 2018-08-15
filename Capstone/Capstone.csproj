@@ -654,6 +654,7 @@
     <Content Include="Views\Soldier\Index.cshtml" />
     <Content Include="Views\Soldier\CreateProfile.cshtml" />
     <Content Include="Views\Soldier\EditPersonalInformation.cshtml" />
+    <Content Include="Views\Soldier\AddDA31.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

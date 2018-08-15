@@ -62,7 +62,7 @@
             @Html.DisplayFor(modelItem => item.LeaveForm)
         </td>
         <td>
-            @Html.ActionLink("Edit Account", "EditPersonalInformation") 
+            @Html.ActionLink("Edit Account", "EditPersonalInformation", new { id = item.SoldierId }) 
         </td>
     </tr>
     }
