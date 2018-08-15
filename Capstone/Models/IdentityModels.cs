@@ -32,8 +32,8 @@ namespace Capstone.Models
             return new ApplicationDbContext();
         }
 
-         DbSet<Soldier> Soldiers;
-         DbSet<FirstSergeant> FirstSergeant;
-         DbSet<CompanyCommander> CompanyCommander;
+         public virtual DbSet<Soldier> Soldiers { get; set; } 
+         public virtual DbSet<FirstSergeant> FirstSergeant { get; set; }
+         public virtual DbSet<CompanyCommander> CompanyCommander { get; set; }
     }
 }

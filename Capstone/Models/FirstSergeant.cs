@@ -20,7 +20,7 @@ namespace Capstone.Models
         public string LastName { get; set; }
 
         [DisplayName("Social Security Number")]
-        public int SocialSecurityNumber { get; set; }
+        public int? SocialSecurityNumber { get; set; }
 
         [DisplayName("Rank/Pay Grade")]
         public string Rank { get; set; }

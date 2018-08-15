@@ -23,7 +23,7 @@ namespace Capstone.Models
         public string Rank { get; set; }
 
         [DisplayName("Social Security Number")]
-        public string SocialSecurityNumber { get; set; }
+        public int? SocialSecurityNumber { get; set; }
 
         [ForeignKey("ApplicationUser")]
         public string ApplicationUserId { get; set; }

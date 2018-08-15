@@ -205,6 +205,10 @@
     <Compile Include="Migrations\201808142037304_InitialSeedingofDatabasewithRoles.Designer.cs">
       <DependentUpon>201808142037304_InitialSeedingofDatabasewithRoles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808151218194_SeedingDatabase.cs" />
+    <Compile Include="Migrations\201808151218194_SeedingDatabase.Designer.cs">
+      <DependentUpon>201808151218194_SeedingDatabase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CompanyCommander.cs" />
@@ -665,6 +669,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201808142037304_InitialSeedingofDatabasewithRoles.resx">
       <DependentUpon>201808142037304_InitialSeedingofDatabasewithRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808151218194_SeedingDatabase.resx">
+      <DependentUpon>201808151218194_SeedingDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
