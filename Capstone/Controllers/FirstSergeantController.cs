@@ -13,7 +13,7 @@ namespace Capstone.Controllers
         // GET: FirstSergeant
         public ActionResult Roster()
         {
-            return View(db.Soldiers.ToList);
+            return View(db.Soldiers.ToList());
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Capstone.Controllers
         }
 
         // GET: Customers/Create
-        public ActionResult Create()
+        public ActionResult CreateProfile()
         {
             return View();
         }
@@ -33,7 +33,7 @@ namespace Capstone.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "SoldierId,FirstName,LastName,Rank,SocialSecurityNumber,UnitNumber,Division,Leadership")] Soldier soldier)
+        public ActionResult CreateProfile([Bind(Include = "SoldierId,FirstName,LastName,Rank,SocialSecurityNumber,UnitNumber,Division,Leadership")] Soldier soldier)
         {
             if (ModelState.IsValid)
             {
@@ -48,7 +48,7 @@ namespace Capstone.Controllers
 
 
         // GET: Customers/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult EditPersonalInformation(int? id)
         {
             if (id == null)
             {
@@ -67,7 +67,7 @@ namespace Capstone.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "SoldierId,FirstName,LastName,Rank,SocialSecurityNumber,UnitNumber,Division,Leadership")] Soldier soldier)
+        public ActionResult EditPersonalInformation([Bind(Include = "SoldierId,FirstName,LastName,Rank,SocialSecurityNumber,UnitNumber,Division,Leadership")] Soldier soldier)
         {
             if (ModelState.IsValid)
             {
