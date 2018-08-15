@@ -11,7 +11,7 @@ namespace Capstone.Models
     public class FirstSergeant
     {
         [Key]
-        public int FirstSergeantID { get; set; }
+        public int FirstSergeantId { get; set; }
 
         [DisplayName("First Name")]
         public string FirstName { get; set; }
