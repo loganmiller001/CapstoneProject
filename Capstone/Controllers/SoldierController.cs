@@ -112,13 +112,14 @@ namespace Capstone.Controllers
                 filePath.LeaveForm = soldier.LeaveForm;
                 db.Entry(filePath).State = EntityState.Modified;
                 db.SaveChanges();
+
                 foreach (string upload in Request.Files)
                 {
-                    string savePath = Server.MapPath("~/SubmitedFiles");
+                    string savePath = Server.MapPath("~/SubmittedFiles");
                     string fileName = Path.GetFileName(soldier.LeaveForm);
                     Request.Files[upload].SaveAs(Path.Combine(savePath, fileName));
                 }
-                    return RedirectToAction("Index");
+                return RedirectToAction("Index");
             }
             return View();
         }
