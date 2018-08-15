@@ -87,6 +87,62 @@ namespace Capstone.Controllers
             base.Dispose(disposing);
         }
 
+        public ActionResult AddDA31(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Soldier soldier = db.Soldiers.Find(id);
+            if (soldier == null)
+            {
+                return HttpNotFound();
+            }
+            return View(soldier);
+        }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddDA31(Soldier soldier)
+        {
+            Soldier filePath = (from f in db.Soldiers where f.SoldierId == soldier.SoldierId select f).FirstOrDefault();
+            if (ModelState.IsValid)
+            {
+                filePath.LeaveForm = soldier.LeaveForm;
+                db.Entry(filePath).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+
+        public ActionResult AddLES(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Soldier soldier = db.Soldiers.Find(id);
+            if (soldier == null)
+            {
+                return HttpNotFound();
+            }
+            return View(soldier);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddLES(Soldier soldier)
+        {
+            Soldier filePath = (from f in db.Soldiers where f.SoldierId == soldier.SoldierId select f).FirstOrDefault();
+            if (ModelState.IsValid)
+            {
+                filePath.LES = soldier.LES;
+                db.Entry(filePath).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
     }
 }
