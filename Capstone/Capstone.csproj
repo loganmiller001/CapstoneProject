@@ -658,6 +658,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="SubmitedFiles\" />
     <Folder Include="Views\FirstSergeant\" />
     <Folder Include="Views\Soldiers\" />
   </ItemGroup>

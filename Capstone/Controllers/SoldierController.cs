@@ -3,6 +3,7 @@ using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -111,7 +112,13 @@ namespace Capstone.Controllers
                 filePath.LeaveForm = soldier.LeaveForm;
                 db.Entry(filePath).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                foreach (string upload in Request.Files)
+                {
+                    string savePath = Server.MapPath("~/SubmitedFiles");
+                    string fileName = Path.GetFileName(soldier.LeaveForm);
+                    Request.Files[upload].SaveAs(Path.Combine(savePath, fileName));
+                }
+                    return RedirectToAction("Index");
             }
             return View();
         }
