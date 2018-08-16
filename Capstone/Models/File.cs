@@ -28,8 +28,7 @@ namespace Capstone.Models
         [DisplayName("File Type")]
         public FieldType FileType { get; set; }
 
-        [ForeignKey("SoldierId")]
-        public int SoliderId { get; set; }
+        public int SoldierIdentification { get; set; }
         public virtual Soldier Soldier { get; set; }
     }
 }

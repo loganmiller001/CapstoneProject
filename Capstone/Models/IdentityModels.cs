@@ -35,5 +35,6 @@ namespace Capstone.Models
          public virtual DbSet<Soldier> Soldiers { get; set; } 
          public virtual DbSet<FirstSergeant> FirstSergeant { get; set; }
          public virtual DbSet<CompanyCommander> CompanyCommander { get; set; }
+         public virtual DbSet<File> File { get; set; }
     }
 }
