@@ -6,9 +6,9 @@
 <h2>Soldier Information</h2>
 
 
-<h4>Soldier</h4>
+
 <dl class="dl-horizontal">
-    @if (Model.Files.Any(f => f.FileType == Capstone.Models.FileType.DaForms))
+    @*@if (Model.Files.Any(f => f.FileType == Capstone.Models.FileType.DaForms))
     {
         <dt>
             DA-Forms
@@ -16,7 +16,7 @@
         <dd>
             < src="~/File?id=@Model.Files.First(f => f.FileType == Capstone.Models.FileType.DaForms).FileID" alt="daforms"/>
         </dd>
-    }
+    }*@
     <dt>
         @Html.DisplayNameFor(model => model.FirstName)
     </dt>
@@ -67,5 +67,8 @@
         @Html.DisplayFor(model => model.Leadership)
     </dd>
 </dl>
+<td>
+    @Html.ActionLink("View DA-31", "DisplayPDF")
+</td>
     
 

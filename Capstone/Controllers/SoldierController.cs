@@ -125,9 +125,12 @@ namespace Capstone.Controllers
                             da31.Content = reader.ReadBytes(upload.ContentLength);
                         }
                         soldier.Files = new List<Models.File> { da31};
+                        db.File.Add(da31);
+                        db.SaveChanges();
+                        soldier.LeaveForm = upload.FileName;
+                        db.Entry(soldier).State = EntityState.Modified;
+                        db.SaveChanges();
                     }
-                    db.Entry(soldier).State = EntityState.Modified;
-                    db.SaveChanges();
                 }
                 catch (RetryLimitExceededException)
                 {
@@ -153,6 +156,11 @@ namespace Capstone.Controllers
                 return HttpNotFound();
             }
             return View(soldier);
+        }
+
+        public FileResult DisplayPDF()
+        {
+            return File("/PdfFiles/da31.pdf", "application/pdf");
         }
 
         public ActionResult AddLES(int? id)
