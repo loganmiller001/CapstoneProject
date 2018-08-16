@@ -1,5 +1,4 @@
-﻿using Microsoft.Ajax.Utilities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -26,7 +25,7 @@ namespace Capstone.Models
         public byte[] Content { get; set; }
 
         [DisplayName("File Type")]
-        public FieldType FileType { get; set; }
+        public FileType FileType { get; set; }
 
         public int SoldierIdentification { get; set; }
         public virtual Soldier Soldier { get; set; }

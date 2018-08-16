@@ -5,7 +5,7 @@
 
 <h2>Add your Finished DA-31 Form</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("AddDA31, Soldier", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
@@ -22,19 +22,18 @@
     @Html.HiddenFor(model => model.LES)
     @Html.HiddenFor(model => model.Rank)
 
-    <form action="" method="post" enctype="multipart/form-data">
-        @Html.LabelFor(model => model.LeaveForm, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.LeaveForm, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.LeaveForm, "", new { @class = "text-danger" })
-        </div>
-    </form>
-    <div class="editor-label">
+    @*<div class="editor-label">
         <label>DA-31:</label>
+    </div>*@
+    <div class="form-group">
+        @Html.Label("DA-31", new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="file" id="Avatar" name="upload" />
+        </div>
     </div>
-    <div class="editor-field">
-        <input type="file" name="file" multiple="multiple" />
-    </div>
+    @*<div class="editor-field">
+            <input type="file" name="file" multiple="multiple" />
+        </div>*@
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" value="Submit" class="btn btn-default" />

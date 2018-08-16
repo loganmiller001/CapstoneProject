@@ -3,6 +3,7 @@ using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -104,21 +105,36 @@ namespace Capstone.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AddDA31(Soldier soldier)
+        public ActionResult AddDA31(Soldier soldier, HttpPostedFileBase upload)
         {
-            Soldier filePath = (from f in db.Soldiers where f.SoldierId == soldier.SoldierId select f).FirstOrDefault();
+            //Soldier filePath = (from f in db.Soldiers where f.SoldierId == soldier.SoldierId select f).FirstOrDefault();
             if (ModelState.IsValid)
             {
-                filePath.LeaveForm = soldier.LeaveForm;
-                db.Entry(filePath).State = EntityState.Modified;
-                db.SaveChanges();
-
-                foreach (string upload in Request.Files)
+                try
                 {
-                    string savePath = Server.MapPath("~/SubmittedFiles");
-                    string fileName = Path.GetFileName(soldier.LeaveForm);
-                    Request.Files[upload].SaveAs(Path.Combine(savePath, fileName));
+                    if (upload != null && upload.ContentLength > 0)
+                    {
+                        var da31 = new Models.File
+                        {
+                            FileName = System.IO.Path.GetFileName(upload.FileName),
+                            FileType = FileType.DaForms,
+                            ContentType = upload.ContentType
+                        };
+                        using (var reader = new System.IO.BinaryReader(upload.InputStream))
+                        {
+                            da31.Content = reader.ReadBytes(upload.ContentLength);
+                        }
+                        soldier.Files = new List<Models.File> { da31};
+                    }
+                    db.Entry(soldier).State = EntityState.Modified;
+                    db.SaveChanges();
                 }
+                catch (RetryLimitExceededException)
+                {
+                    ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
+                }
+
+
                 return RedirectToAction("Index");
             }
             return View();
