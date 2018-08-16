@@ -211,6 +211,10 @@
     <Compile Include="Migrations\201808151218194_SeedingDatabase.Designer.cs">
       <DependentUpon>201808151218194_SeedingDatabase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808161254164_AddingFileToDatabase.cs" />
+    <Compile Include="Migrations\201808161254164_AddingFileToDatabase.Designer.cs">
+      <DependentUpon>201808161254164_AddingFileToDatabase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CompanyCommander.cs" />
@@ -682,6 +686,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808151218194_SeedingDatabase.resx">
       <DependentUpon>201808151218194_SeedingDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808161254164_AddingFileToDatabase.resx">
+      <DependentUpon>201808161254164_AddingFileToDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
