@@ -1,16 +1,13 @@
 ﻿@model Capstone.Models.Soldier
 @{
-     ViewBag.Title = "AddDA31";
+    ViewBag.Title = "AddDA31";
 }
 
 <h2>Add your Finished DA-31 Form</h2>
 
-@using (Html.BeginForm("AddDA31, Soldier", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("AddDA31/3, Soldier", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-
-<div class="form-horizontal">
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.HiddenFor(model => model.SoldierId)
     @Html.HiddenFor(model => model.ApplicationUserId)
     @Html.HiddenFor(model => model.FirstName)
@@ -21,23 +18,20 @@
     @Html.HiddenFor(model => model.Leadership)
     @Html.HiddenFor(model => model.LES)
     @Html.HiddenFor(model => model.Rank)
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-    @*<div class="editor-label">
-        <label>DA-31:</label>
-    </div>*@
-    <div class="form-group">
-        @Html.Label("DA-31", new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            <input type="file" id="Avatar" name="upload" />
+
+        <div class="form-group">
+            @Html.Label("DA-31", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="file" id="DA-31" name="upload" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Submit" class="btn btn-default" />
+            </div>
         </div>
     </div>
-    @*<div class="editor-field">
-            <input type="file" name="file" multiple="multiple" />
-        </div>*@
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Submit" class="btn btn-default" />
-        </div>
-    </div>
-</div>
 }
