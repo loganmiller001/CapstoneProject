@@ -196,6 +196,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\FirstSergeantController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -661,12 +662,13 @@
     <Content Include="Views\Soldier\CreateProfile.cshtml" />
     <Content Include="Views\Soldier\EditPersonalInformation.cshtml" />
     <Content Include="Views\Soldier\AddDA31.cshtml" />
+    <Content Include="Views\Soldier\SoldierInformation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="SubmittedFiles\" />
+    <Folder Include="Views\File\" />
     <Folder Include="Views\FirstSergeant\" />
-    <Folder Include="Views\Soldiers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

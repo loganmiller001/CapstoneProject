@@ -140,6 +140,21 @@ namespace Capstone.Controllers
             return View();
         }
 
+        public ActionResult SoldierInformation(int? id)
+        {
+            if(id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Soldier soldier = db.Soldiers.Include(f => f.Files).SingleOrDefault(s => s.SoldierId == id);
+            if (soldier == null)
+            {
+                return HttpNotFound();
+            }
+            return View(soldier);
+        }
+
         public ActionResult AddLES(int? id)
         {
             if (id == null)

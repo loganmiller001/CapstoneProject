@@ -1,0 +1,71 @@
+﻿@model Capstone.Models.Soldier
+@{
+    ViewBag.Title = "SoldierInformation";
+}
+
+<h2>Soldier Information</h2>
+
+
+<h4>Soldier</h4>
+<dl class="dl-horizontal">
+    @if (Model.Files.Any(f => f.FileType == Capstone.Models.FileType.DaForms))
+    {
+        <dt>
+            DA-Forms
+        </dt>
+        <dd>
+            < src="~/File?id=@Model.Files.First(f => f.FileType == Capstone.Models.FileType.DaForms).FileID" alt="daforms"/>
+        </dd>
+    }
+    <dt>
+        @Html.DisplayNameFor(model => model.FirstName)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.FirstName)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.LastName)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.LastName)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Rank)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Rank)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.SocialSecurityNumber)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.SocialSecurityNumber)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.UnitNumber)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.UnitNumber)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Division)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Division)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Leadership)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Leadership)
+    </dd>
+</dl>
+    
+
