@@ -1,0 +1,37 @@
+﻿@model Capstone.Models.Soldier
+@{
+    ViewBag.Title = "AddLES";
+}
+
+<h2>Add your most up-to-date Leave and Earnings Statement</h2>
+
+@using (Html.BeginForm("AddLES/3, Soldier", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.SoldierId)
+    @Html.HiddenFor(model => model.ApplicationUserId)
+    @Html.HiddenFor(model => model.FirstName)
+    @Html.HiddenFor(model => model.LastName)
+    @Html.HiddenFor(model => model.SocialSecurityNumber)
+    @Html.HiddenFor(model => model.UnitNumber)
+    @Html.HiddenFor(model => model.Division)
+    @Html.HiddenFor(model => model.Leadership)
+    @Html.HiddenFor(model => model.LeaveForm)
+    @Html.HiddenFor(model => model.Rank)
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+        <div class="form-group">
+            @Html.Label("Leave and Earnings Statement", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="file" id="LES" name="upload" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Submit" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}

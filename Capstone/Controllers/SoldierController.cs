@@ -161,7 +161,7 @@ namespace Capstone.Controllers
             var select = db.Soldiers.Find(id);
             
 
-            return File(select.LeaveForm, "application/pdf");
+            return File(select.LeaveForm, "application/jpg");
         }
 
         public ActionResult AddLES(int? id)
@@ -180,17 +180,47 @@ namespace Capstone.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AddLES(Soldier soldier)
+        public ActionResult AddLES(Soldier soldier, HttpPostedFileBase upload)
         {
-            Soldier filePath = (from f in db.Soldiers where f.SoldierId == soldier.SoldierId select f).FirstOrDefault();
             if (ModelState.IsValid)
             {
-                filePath.LES = soldier.LES;
-                db.Entry(filePath).State = EntityState.Modified;
-                db.SaveChanges();
+                try
+                {
+                    if (upload != null && upload.ContentLength > 0)
+                    {
+                        var da31 = new Models.File
+                        {
+                            FileName = System.IO.Path.GetFileName(upload.FileName),
+                            FileType = FileType.DaForms,
+                            ContentType = upload.ContentType
+                        };
+                        using (var reader = new System.IO.BinaryReader(upload.InputStream))
+                        {
+                            da31.Content = reader.ReadBytes(upload.ContentLength);
+                        }
+                        soldier.Files = new List<Models.File> { da31 };
+                        soldier.LES = upload.FileName;
+                        db.Entry(soldier).State = EntityState.Modified;
+                        db.SaveChanges();
+                    }
+                }
+                catch (RetryLimitExceededException)
+                {
+                    ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
+                }
+
+
                 return RedirectToAction("Index");
             }
             return View();
+        }
+
+        public ActionResult DisplayLES(int? id)
+        {
+            var select = db.Soldiers.Find(id);
+
+
+            return File(select.LES, "application/pdf");
         }
     }
 }
