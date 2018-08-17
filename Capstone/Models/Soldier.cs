@@ -28,8 +28,14 @@ namespace Capstone.Models
         [DisplayName("DA-31")]
         public string LeaveForm{get; set;}
 
+        [DisplayName("DA-31 Submission")]
+        public bool LeaveFormSubmission { get; set; }
+
         [DisplayName("Leave and Earning Statement")]
         public string LES { get; set; }
+
+        [DisplayName("LES Submission")]
+        public bool LESSubmission { get; set; }
 
         [DisplayName("Assigned Unit")]
         public string UnitNumber { get; set; }
