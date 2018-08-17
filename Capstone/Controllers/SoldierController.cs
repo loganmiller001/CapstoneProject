@@ -224,5 +224,65 @@ namespace Capstone.Controllers
 
             return File(select.LES, "application/pdf");
         }
+
+        public ActionResult AddTravelFiles(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Soldier soldier = db.Soldiers.Find(id);
+            if (soldier == null)
+            {
+                return HttpNotFound();
+            }
+            return View(soldier);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddTravelFile(Soldier soldier, HttpPostedFileBase upload)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    if (upload != null && upload.ContentLength > 0)
+                    {
+                        var da31 = new Models.File
+                        {
+                            FileName = System.IO.Path.GetFileName(upload.FileName),
+                            FileType = FileType.DaForms,
+                            ContentType = upload.ContentType
+                        };
+                        using (var reader = new System.IO.BinaryReader(upload.InputStream))
+                        {
+                            da31.Content = reader.ReadBytes(upload.ContentLength);
+                        }
+                        soldier.Files = new List<Models.File> { da31 };
+                        soldier.TravelFileName = upload.FileName;
+                        soldier.TravelInfo = true;
+                        db.Entry(soldier).State = EntityState.Modified;
+                        db.SaveChanges();
+                    }
+                }
+                catch (RetryLimitExceededException)
+                {
+                    ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
+                }
+
+
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+
+        public ActionResult DisplayTravelDocs(int? id)
+        {
+            var select = db.Soldiers.Find(id);
+
+
+            return File(select.TravelFileName, "application/pdf");
+        }
     }
 }

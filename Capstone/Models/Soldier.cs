@@ -46,6 +46,12 @@ namespace Capstone.Models
         [DisplayName("First Line Supervisor")]
         public string Leadership { get; set; }
 
+        [DisplayName("Travel Information")]
+        public bool TravelInfo { get; set; }
+
+        public string TravelFileName { get; set; }
+
+
         [ForeignKey("ApplicationUser")]
         public string ApplicationUserId { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }

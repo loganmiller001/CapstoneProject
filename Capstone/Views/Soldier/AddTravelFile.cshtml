@@ -1,13 +1,11 @@
 ﻿@model Capstone.Models.Soldier
 @{
-                /**/
-
-                ViewBag.Title = "AddLES";
+    ViewBag.Title = "AddTravelFile";
 }
 
-<h2>Add your most up-to-date Leave and Earnings Statement</h2>
+<h2>Add your Finished DA-31 Form</h2>
 
-@using (Html.BeginForm("AddLES/3, Soldier", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("AddTravelFile/3, Soldier", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     @Html.HiddenFor(model => model.SoldierId)
@@ -18,9 +16,9 @@
     @Html.HiddenFor(model => model.UnitNumber)
     @Html.HiddenFor(model => model.Division)
     @Html.HiddenFor(model => model.Leadership)
-    @Html.HiddenFor(model => model.LeaveForm)
-    @Html.HiddenFor(model => model.LeaveFormSubmission)
+    @Html.HiddenFor(model => model.LES)
     @Html.HiddenFor(model => model.LESSubmission)
+    @Html.HiddenFor(model => model.LeaveFormSubmission)
     @Html.HiddenFor(model => model.TravelFileName)
     @Html.HiddenFor(model => model.TravelInfo)
     @Html.HiddenFor(model => model.Rank)
@@ -29,9 +27,9 @@
 
 
         <div class="form-group">
-            @Html.Label("Leave and Earnings Statement", new { @class = "control-label col-md-2" })
+            @Html.Label("DA-31", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <input type="file" id="LES" name="upload" />
+                <input type="file" id="DA-31" name="upload" />
             </div>
         </div>
         <div class="form-group">

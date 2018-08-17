@@ -668,6 +668,8 @@
     <Content Include="Views\Soldier\AddDA31.cshtml" />
     <Content Include="Views\Soldier\SoldierInformation.cshtml" />
     <Content Include="Views\Soldier\AddLES.cshtml" />
+    <Content Include="Views\Soldier\DisplayTravelDocs.cshtml" />
+    <Content Include="Views\Soldier\AddTravelFiles.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
