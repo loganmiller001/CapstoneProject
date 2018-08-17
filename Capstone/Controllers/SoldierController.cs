@@ -225,7 +225,7 @@ namespace Capstone.Controllers
             return File(select.LES, "application/pdf");
         }
 
-        public ActionResult AddTravelFiles(int? id)
+        public ActionResult AddTravelFile(int? id)
         {
             if (id == null)
             {
