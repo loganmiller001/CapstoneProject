@@ -77,12 +77,18 @@
         @Html.DisplayNameFor(model => model.TravelInfo)
     </dt>
     <dd>
-
+        @Html.DisplayFor(model => model.TravelInfo)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.PacketStatus)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.PacketStatus)
     </dd>
     <tl>
         @Html.ActionLink("View DA-31", "DisplayDA31", new { id = Model.SoldierId }) |
         @Html.ActionLink("View LES", "DisplayLES", new { id = Model.SoldierId }) |
-        @Html.ActionLink("View Travel Documents", "DisplayTravelDocs", new { id = Model.SoldierId})
+        @Html.ActionLink("View Travel Documents", "DisplayTravelDocs", new { id = Model.SoldierId })
     </tl>
 </dl>
 <br />

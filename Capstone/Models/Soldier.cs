@@ -51,6 +51,8 @@ namespace Capstone.Models
 
         public string TravelFileName { get; set; }
 
+        [DisplayName("Leave Status")]
+        public bool PacketStatus { get; set; }
 
         [ForeignKey("ApplicationUser")]
         public string ApplicationUserId { get; set; }
