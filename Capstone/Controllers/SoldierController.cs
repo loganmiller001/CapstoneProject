@@ -89,6 +89,28 @@ namespace Capstone.Controllers
             base.Dispose(disposing);
         }
 
+        public ActionResult SubmitPacket(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Soldier soldier = db.Soldiers.Find(id);
+            if (soldier == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.Text = "Before you submit, ensure that all information and required forms are included in your packet.";
+            return View(soldier);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult SubmitPacket(Soldier soldier)
+        {
+            return RedirectToAction("");
+        }
+
         public ActionResult AddDA31(int? id)
         {
             if (id == null)
