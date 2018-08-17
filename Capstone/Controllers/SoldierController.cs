@@ -126,6 +126,7 @@ namespace Capstone.Controllers
                         }
                         soldier.Files = new List<Models.File> { da31};
                         soldier.LeaveForm = upload.FileName;
+                        soldier.LeaveFormSubmission = true;
                         db.Entry(soldier).State = EntityState.Modified;
                         db.SaveChanges();
                     }
@@ -161,7 +162,7 @@ namespace Capstone.Controllers
             var select = db.Soldiers.Find(id);
             
 
-            return File(select.LeaveForm, "application/jpg");
+            return File(select.LeaveForm, "application/pdf");
         }
 
         public ActionResult AddLES(int? id)
@@ -200,6 +201,7 @@ namespace Capstone.Controllers
                         }
                         soldier.Files = new List<Models.File> { da31 };
                         soldier.LES = upload.FileName;
+                        soldier.LESSubmission = true;
                         db.Entry(soldier).State = EntityState.Modified;
                         db.SaveChanges();
                     }

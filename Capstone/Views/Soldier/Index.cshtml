@@ -4,7 +4,6 @@
 }
 
 <h2>Home Page</h2>
-
 <table class="table">
     <tr>
         <th>
@@ -26,48 +25,48 @@
             @Html.DisplayNameFor(model => model.Leadership)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.LES)
+            @Html.DisplayNameFor(model => model.LESSubmission)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.LeaveForm)
+            @Html.DisplayNameFor(model => model.LeaveFormSubmission)
         </th>
         <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.FirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LastName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SocialSecurityNumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UnitNumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Division)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Leadership)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LES)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LeaveForm)
-        </td>
-        <td>
-            @Html.ActionLink("Edit Account", "EditPersonalInformation", new { id = item.SoldierId })  |
-            @Html.ActionLink("Add DA-31", "AddDA31", new { id = item.SoldierId}) |
-            @Html.ActionLink("Add LES", "AddLES", new { id = item.SoldierId})   |
-            @Html.ActionLink("View Information", "SoldierInformation", new { id = item.SoldierId})
-        </td>
-    </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SocialSecurityNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Division)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Leadership)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LESSubmission)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeaveFormSubmission)
+            </td>
+            <td>
+                @Html.ActionLink("Edit Account", "EditPersonalInformation", new { id = item.SoldierId })  |
+                @Html.ActionLink("Add DA-31", "AddDA31", new { id = item.SoldierId }) |
+                @Html.ActionLink("Add LES", "AddLES", new { id = item.SoldierId })   |
+                @Html.ActionLink("View Information", "SoldierInformation", new { id = item.SoldierId })
+            </td>
+        </tr>
     }
 
 </table>
