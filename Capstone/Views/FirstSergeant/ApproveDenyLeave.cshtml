@@ -1,0 +1,44 @@
+﻿@model Capstone.Models.Soldier
+@{
+                /**/
+
+                ViewBag.Title = "ApproveDenyLeave";
+}
+
+<h2>Is the Leave Packet Complete?</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.SoldierId)
+    @Html.HiddenFor(model => model.ApplicationUserId)
+    @Html.HiddenFor(model => model.FirstName)
+    @Html.HiddenFor(model => model.LastName)
+    @Html.HiddenFor(model => model.SocialSecurityNumber)
+    @Html.HiddenFor(model => model.UnitNumber)
+    @Html.HiddenFor(model => model.Division)
+    @Html.HiddenFor(model => model.Leadership)
+    @Html.HiddenFor(model => model.LeaveForm)
+    @Html.HiddenFor(model => model.LeaveFormSubmission)
+    @Html.HiddenFor(model => model.LESSubmission)
+    @Html.HiddenFor(model => model.TravelFileName)
+    @Html.HiddenFor(model => model.TravelInfo)
+    @Html.HiddenFor(model => model.Rank)
+
+    @Html.DropDownListFor(m => m.PacketStatus, new SelectList(
+        new[] {
+            new { Value = "true", Text = "Complete" },
+            new { Value = "false", Text = "Incomplete" },
+        },
+        "Value",
+        "Text"
+    ))
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Submit" class="btn btn-default" />
+        </div>
+    </div>
+}
+

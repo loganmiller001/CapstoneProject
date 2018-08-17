@@ -678,6 +678,7 @@
     <Content Include="Views\Soldier\AddLES.cshtml" />
     <Content Include="Views\Soldier\AddTravelFile.cshtml" />
     <Content Include="Views\FirstSergeant\Roster.cshtml" />
+    <Content Include="Views\FirstSergeant\ApproveDenyLeave.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

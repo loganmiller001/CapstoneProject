@@ -75,7 +75,8 @@
             <td>
                 @Html.ActionLink("View Leave and Earnings Statement", "ViewLES", new { id = item.SoldierId }) |
                 @Html.ActionLink("View DA-31", "ViewDA31", new { id = item.SoldierId }) |
-                @Html.ActionLink("View Travel Documents", "ViewTravelDocs", new { id = item.SoldierId })
+                @Html.ActionLink("View Travel Documents", "ViewTravelDocs", new { id = item.SoldierId }) |
+                @Html.ActionLink("Approve Packet", "ApproveDenyLeave", new { id = item.SoldierId})
             </td>
         </tr>
     }
