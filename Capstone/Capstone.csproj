@@ -220,6 +220,10 @@
     <Compile Include="Migrations\201808171443438_AddedBoolPropertiesforDA31andLESForms.Designer.cs">
       <DependentUpon>201808171443438_AddedBoolPropertiesforDA31andLESForms.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808171550244_AddedPropertiesForTravelDocumentsinSoldier.cs" />
+    <Compile Include="Migrations\201808171550244_AddedPropertiesForTravelDocumentsinSoldier.Designer.cs">
+      <DependentUpon>201808171550244_AddedPropertiesForTravelDocumentsinSoldier.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CompanyCommander.cs" />
@@ -668,8 +672,7 @@
     <Content Include="Views\Soldier\AddDA31.cshtml" />
     <Content Include="Views\Soldier\SoldierInformation.cshtml" />
     <Content Include="Views\Soldier\AddLES.cshtml" />
-    <Content Include="Views\Soldier\DisplayTravelDocs.cshtml" />
-    <Content Include="Views\Soldier\AddTravelFiles.cshtml" />
+    <Content Include="Views\Soldier\AddTravelFile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -702,6 +705,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808171443438_AddedBoolPropertiesforDA31andLESForms.resx">
       <DependentUpon>201808171443438_AddedBoolPropertiesforDA31andLESForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808171550244_AddedPropertiesForTravelDocumentsinSoldier.resx">
+      <DependentUpon>201808171550244_AddedPropertiesForTravelDocumentsinSoldier.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
