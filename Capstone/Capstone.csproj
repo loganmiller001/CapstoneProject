@@ -673,12 +673,12 @@
     <Content Include="Views\Soldier\SoldierInformation.cshtml" />
     <Content Include="Views\Soldier\AddLES.cshtml" />
     <Content Include="Views\Soldier\AddTravelFile.cshtml" />
+    <Content Include="Views\FirstSergeant\Roster.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="SubmittedFiles\" />
     <Folder Include="Views\File\" />
-    <Folder Include="Views\FirstSergeant\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

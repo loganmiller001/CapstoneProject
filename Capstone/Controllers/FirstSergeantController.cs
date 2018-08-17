@@ -15,5 +15,29 @@ namespace Capstone.Controllers
         {
             return View(db.Soldiers.ToList());
         }
+
+        public ActionResult ViewLES(int? id)
+        {
+            var select = db.Soldiers.Find(id);
+
+
+            return File(select.LES, "application/pdf");
+        }
+
+        public ActionResult ViewDA31(int? id)
+        {
+            var select = db.Soldiers.Find(id);
+
+
+            return File(select.LeaveForm, "application/pdf");
+        }
+
+        public ActionResult ViewTravelDocs(int? id)
+        {
+            var select = db.Soldiers.Find(id);
+
+
+            return File(select.TravelFileName, "application/pdf");
+        }
     }
 }
