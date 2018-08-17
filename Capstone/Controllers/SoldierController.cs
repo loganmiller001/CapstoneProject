@@ -107,7 +107,7 @@ namespace Capstone.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult AddDA31(Soldier soldier, HttpPostedFileBase upload)
         {
-            //Soldier filePath = (from f in db.Soldiers where f.SoldierId == soldier.SoldierId select f).FirstOrDefault();
+            
             if (ModelState.IsValid)
             {
                 try
@@ -125,8 +125,6 @@ namespace Capstone.Controllers
                             da31.Content = reader.ReadBytes(upload.ContentLength);
                         }
                         soldier.Files = new List<Models.File> { da31};
-                        db.File.Add(da31);
-                        db.SaveChanges();
                         soldier.LeaveForm = upload.FileName;
                         db.Entry(soldier).State = EntityState.Modified;
                         db.SaveChanges();
@@ -158,9 +156,12 @@ namespace Capstone.Controllers
             return View(soldier);
         }
 
-        public FileResult DisplayPDF()
+        public ActionResult DisplayDA31(int? id)
         {
-            return File("/PdfFiles/da31.pdf", "application/pdf");
+            var select = db.Soldiers.Find(id);
+            
+
+            return File(select.LeaveForm, "application/pdf");
         }
 
         public ActionResult AddLES(int? id)

@@ -9,14 +9,14 @@
 
 <dl class="dl-horizontal">
     @*@if (Model.Files.Any(f => f.FileType == Capstone.Models.FileType.DaForms))
-    {
-        <dt>
-            DA-Forms
-        </dt>
-        <dd>
-            < src="~/File?id=@Model.Files.First(f => f.FileType == Capstone.Models.FileType.DaForms).FileID" alt="daforms"/>
-        </dd>
-    }*@
+        {
+            <dt>
+                DA-Forms
+            </dt>
+            <dd>
+                < src="~/File?id=@Model.Files.First(f => f.FileType == Capstone.Models.FileType.DaForms).FileID" alt="daforms"/>
+            </dd>
+        }*@
     <dt>
         @Html.DisplayNameFor(model => model.FirstName)
     </dt>
@@ -66,9 +66,11 @@
     <dd>
         @Html.DisplayFor(model => model.Leadership)
     </dd>
+    <tl>
+        @Html.ActionLink("View DA-31", "DisplayDA31", new { id = Model.SoldierId })
+        @Html.ActionLink("View LES", "DisplayLES")
+    </tl>
 </dl>
-<td>
-    @Html.ActionLink("View DA-31", "DisplayPDF")
-</td>
+
     
 
