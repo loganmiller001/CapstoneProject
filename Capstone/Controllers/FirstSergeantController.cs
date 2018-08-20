@@ -60,13 +60,14 @@ namespace Capstone.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ApproveDenyLeave(Soldier soldier)
+        public ActionResult ApproveDenyLeave(Soldier soldier, Email email)
         {
             var status = (from s in db.Soldiers where s.SoldierId == soldier.SoldierId select s).FirstOrDefault();
             status.PacketStatus = soldier.PacketStatus;
             db.Entry(status).State = EntityState.Modified;
             db.SaveChanges();
-            return RedirectToAction("Contact");
+            var notification = new HomeController().ApprovalNotification(email, status);
+            return RedirectToAction("Roster");
         }
     }
 }
