@@ -66,7 +66,7 @@ namespace Capstone.Controllers
             status.PacketStatus = soldier.PacketStatus;
             db.Entry(status).State = EntityState.Modified;
             db.SaveChanges();
-            return RedirectToAction("Roster");
+            return RedirectToAction("Contact");
         }
     }
 }

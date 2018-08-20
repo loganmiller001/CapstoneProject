@@ -7,8 +7,10 @@ using System.Data.Entity.Infrastructure;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+
 
 namespace Capstone.Controllers
 {
@@ -106,10 +108,13 @@ namespace Capstone.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult SubmitPacket(Soldier soldier)
+        public ActionResult SubmitPacket(Soldier soldier, Email email)
         {
-            return RedirectToAction("");
+            var sent = new HomeController().AutomatedMessageSoldier(email);
+            var recieved = new HomeController().AutomatedMessageFirstSergeant(email);
+            return RedirectToAction("Index");
         }
+
 
         public ActionResult AddDA31(int? id)
         {

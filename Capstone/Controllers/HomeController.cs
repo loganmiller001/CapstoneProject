@@ -62,5 +62,76 @@ namespace Capstone.Controllers
             }
             return View(model);
         }
+
+        public ActionResult Sent()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> AutomatedMessageSoldier(Email email)
+        {
+            if (ModelState.IsValid)
+            {
+                var body = "<p>Email From: {0} ({1})</p><p>Message:</p><p>{2}</p>";
+                var message = new MailMessage();
+                email.Message = "Your packet has been successfully recieved. You will recieve confrimation on it's status once it has been reviewed.";
+                message.To.Add(new MailAddress("loganmiller001@live.com"));  // replace with valid value 
+                message.From = new MailAddress("loganmiller001@live.com");  // replace with valid value
+                message.Subject = "Your email subject";
+                message.Body = string.Format(body, email.FromName, email.FromEmail, email.Message);
+                message.IsBodyHtml = true;
+
+                using (var smtp = new SmtpClient())
+                {
+                    var credential = new NetworkCredential
+                    {
+                        UserName = "loganmiller001@live.com",  // replace with valid value
+                        Password = "rakkasans13"  // replace with valid value
+                    };
+                    smtp.Credentials = credential;
+                    smtp.Host = "smtp-mail.outlook.com";
+                    smtp.Port = 587;
+                    smtp.EnableSsl = true;
+                    smtp.Send(message);
+                    return RedirectToAction("Index", "Soldier");
+                }
+            }
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> AutomatedMessageFirstSergeant(Email email)
+        {
+            if (ModelState.IsValid)
+            {
+                var body = "<p>Email From: {0} ({1})</p><p>Message:</p><p>{2}</p>";
+                var message = new MailMessage();
+                email.Message = "A new packet has been recieved, please long in to review it.";
+                message.To.Add(new MailAddress("loganmiller001@live.com"));  // replace with valid value 
+                message.From = new MailAddress("loganmiller001@live.com");  // replace with valid value
+                message.Subject = "Your email subject";
+                message.Body = string.Format(body, email.FromName, email.FromEmail, email.Message);
+                message.IsBodyHtml = true;
+
+                using (var smtp = new SmtpClient())
+                {
+                    var credential = new NetworkCredential
+                    {
+                        UserName = "loganmiller001@live.com",  // replace with valid value
+                        Password = "rakkasans13"  // replace with valid value
+                    };
+                    smtp.Credentials = credential;
+                    smtp.Host = "smtp-mail.outlook.com";
+                    smtp.Port = 587;
+                    smtp.EnableSsl = true;
+                    smtp.Send(message);
+                    return RedirectToAction("Index", "Soldier");
+                }
+            }
+            return View();
+        }
     }
 }
