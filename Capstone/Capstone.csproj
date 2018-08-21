@@ -190,12 +190,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="APIKeys.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CompanyCommanderController.cs" />
     <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\FirstSergeantController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -682,6 +684,9 @@
     <Content Include="Views\FirstSergeant\ApproveDenyLeave.cshtml" />
     <Content Include="Views\Soldier\SubmitPacket.cshtml" />
     <Content Include="Views\Home\Sent.cshtml" />
+    <Content Include="Views\Soldier\GoogleMap.cshtml" />
+    <Content Include="Views\CompanyCommander\Roster.cshtml" />
+    <Content Include="Views\CompanyCommander\CommandOverride.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

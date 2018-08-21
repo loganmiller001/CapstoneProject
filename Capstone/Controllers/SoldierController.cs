@@ -311,5 +311,10 @@ namespace Capstone.Controllers
 
             return File(select.TravelFileName, "application/pdf");
         }
+
+        public ActionResult GoogleMap(Soldier soldier)
+        {
+            return View();
+        }
     }
 }
