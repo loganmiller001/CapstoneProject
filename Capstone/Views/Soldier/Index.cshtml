@@ -67,10 +67,10 @@
             @Html.DisplayFor(modelItem => item.Leadership)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.StartDate)
+            @item.StartDate.Value.ToShortDateString()
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.EndDate)
+            @item.EndDate.Value.ToShortDateString()
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.LESSubmission)
@@ -86,6 +86,7 @@
         </td>
         <td>
             @Html.ActionLink("Edit Account", "EditPersonalInformation", new { id = item.SoldierId })  |
+            @Html.ActionLink("Select Leave Days", "SetLeaveDays", new { id = item.SoldierId})   |
             @Html.ActionLink("Add DA-31", "AddDA31", new { id = item.SoldierId }) |
             @Html.ActionLink("Add LES", "AddLES", new { id = item.SoldierId })   |
             @Html.ActionLink("Add Travel Files", "AddTravelFile", new { id = item.SoldierId })    |
