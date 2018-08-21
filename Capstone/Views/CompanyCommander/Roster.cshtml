@@ -5,6 +5,7 @@
 }
 
 <h2>Company Roster</h2>
+@Html.ActionLink("Set Leave Days", "CreateLeave")
 <table class="table">
     <tr>
         <th>
@@ -77,7 +78,7 @@
                 @Html.ActionLink("View Leave and Earnings Statement", "ViewLES", new { id = item.SoldierId }) |
                 @Html.ActionLink("View DA-31", "ViewDA31", new { id = item.SoldierId }) |
                 @Html.ActionLink("View Travel Documents", "ViewTravelDocs", new { id = item.SoldierId }) |
-                @Html.ActionLink("Approve Packet", "ApproveDenyLeave", new { id = item.SoldierId })
+                @Html.ActionLink("Approve Packet", "CommandOverride", new { id = item.SoldierId })
             </td>
         </tr>
     }

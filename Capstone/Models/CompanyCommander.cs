@@ -29,5 +29,10 @@ namespace Capstone.Models
         public string ApplicationUserId { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
 
+        [DisplayName("Start Date")]
+        public DateTime? StartLeave { get; set; }
+
+        [DisplayName("End Date")]
+        public DateTime? EndLeave { get; set; }
     }
 }

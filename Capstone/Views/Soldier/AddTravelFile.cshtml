@@ -24,6 +24,8 @@
     @Html.HiddenFor(model => model.PacketStatus)
     @Html.HiddenFor(model => model.TravelInfo)
     @Html.HiddenFor(model => model.Rank)
+    @Html.HiddenFor(model => model.StartDate)
+    @Html.HiddenFor(model => model.EndDate)
     <div class="form-horizontal">
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 

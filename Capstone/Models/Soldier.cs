@@ -59,6 +59,12 @@ namespace Capstone.Models
         public virtual ApplicationUser ApplicationUser { get; set; }
 
         public virtual ICollection<File> Files { get; set; }
+
+        [DisplayName("Start Date")]
+        public DateTime? StartDate { get; set; }
+
+        [DisplayName("End Date")]
+        public DateTime? EndDate { get; set; }
     }
     
 }

@@ -316,5 +316,31 @@ namespace Capstone.Controllers
         {
             return View();
         }
+
+        public ActionResult SetLeaveDays(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Soldier soldier = db.Soldiers.Find(id);
+            if (soldier == null)
+            {
+                return HttpNotFound();
+            }
+            return View(soldier);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult SetLeaveDays(Soldier soldier)
+        {
+            var leave = (from l in db.Soldiers.Where(l => l.SoldierId == soldier.SoldierId) select l).FirstOrDefault();
+            leave.StartDate = soldier.StartDate;
+            leave.EndDate = soldier.EndDate;
+            db.Entry(leave).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
