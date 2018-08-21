@@ -7,6 +7,8 @@
 
 @using (Html.BeginForm("AddTravelFile/3, Soldier", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
+    @Html.ActionLink("Create Route", "GoogleMap", new { id = Model.SoldierId})
+
     @Html.AntiForgeryToken()
     @Html.HiddenFor(model => model.SoldierId)
     @Html.HiddenFor(model => model.ApplicationUserId)

@@ -44,18 +44,16 @@ namespace Capstone.Controllers
 
         public ActionResult ApproveDenyLeave(int? id)
         {
+            if (id == null)
             {
-                if (id == null)
-                {
-                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-                }
-                Soldier soldier = db.Soldiers.Find(id);
-                if (soldier == null)
-                {
-                    return HttpNotFound();
-                }
-                return View(soldier);
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            Soldier soldier = db.Soldiers.Find(id);
+            if (soldier == null)
+            {
+                return HttpNotFound();
+            }
+            return View(soldier);
         }
 
         [HttpPost]
@@ -68,6 +66,14 @@ namespace Capstone.Controllers
             db.SaveChanges();
             var notification = new HomeController().ApprovalNotification(email, status);
             return RedirectToAction("Roster");
+        }
+
+        public ActionResult ViewRoute(int? id)
+        {
+            var select = db.Soldiers.Find(id);
+
+
+            return File(select.RouteFile, "application/pdf");
         }
     }
 }

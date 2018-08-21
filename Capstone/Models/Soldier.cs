@@ -65,6 +65,11 @@ namespace Capstone.Models
 
         [DisplayName("End Date")]
         public DateTime? EndDate { get; set; }
+
+        [DisplayName("Route Map")]
+        public bool GoogleMap { get; set; }
+
+        public string RouteFile { get; set; }
     }
     
 }
