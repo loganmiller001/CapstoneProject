@@ -234,6 +234,10 @@
     <Compile Include="Migrations\201808211357072_CreatedDateTmeProperties.Designer.cs">
       <DependentUpon>201808211357072_CreatedDateTmeProperties.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808212052455_MadeFileandBooleanPropForGoogleMapFile.cs" />
+    <Compile Include="Migrations\201808212052455_MadeFileandBooleanPropForGoogleMapFile.Designer.cs">
+      <DependentUpon>201808212052455_MadeFileandBooleanPropForGoogleMapFile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CompanyCommander.cs" />
@@ -776,6 +780,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808211357072_CreatedDateTmeProperties.resx">
       <DependentUpon>201808211357072_CreatedDateTmeProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808212052455_MadeFileandBooleanPropForGoogleMapFile.resx">
+      <DependentUpon>201808212052455_MadeFileandBooleanPropForGoogleMapFile.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
