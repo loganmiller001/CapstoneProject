@@ -10,6 +10,7 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Capstone.ServiceReference1;
 
 
 namespace Capstone.Controllers
@@ -343,10 +344,14 @@ namespace Capstone.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AddGoogleMap(Soldier soldier, HttpPostedFileBase upload)
+        public ActionResult AddGoogleMap(Soldier soldier)
         {
-            
-            return View();
+            var data = (from d in db.Soldiers.Where(d => d.SoldierId == soldier.SoldierId) select d).FirstOrDefault();
+            data.StartPoint = soldier.StartPoint;
+            data.EndPoint = soldier.EndPoint;
+            db.Entry(data).State = EntityState.Modified;
+            db.SaveChanges();
+            return View(data);
         }
 
         public ActionResult SetLeaveDays(int? id)

@@ -89,7 +89,6 @@
 
             source = document.getElementById("txtSource").value;
             destination = document.getElementById("txtDestination").value;
-
             var request = {
                 origin: source,
                 destination: destination,
@@ -199,6 +198,11 @@
                 autocomplete.setOptions({ strictBounds: this.checked });
             });
     </script>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Submit" class="btn btn-default" />
+        </div>
+    </div>
 </body>
 </html>
-} 
+

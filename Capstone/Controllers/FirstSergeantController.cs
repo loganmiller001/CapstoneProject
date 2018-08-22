@@ -70,7 +70,16 @@ namespace Capstone.Controllers
 
         public ActionResult ViewRoute(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Soldier soldier = db.Soldiers.Find(id);
+            if (soldier == null)
+            {
+                return HttpNotFound();
+            }
+            return View(soldier);
         }
     }
 }
