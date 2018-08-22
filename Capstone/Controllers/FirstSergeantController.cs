@@ -70,10 +70,7 @@ namespace Capstone.Controllers
 
         public ActionResult ViewRoute(int? id)
         {
-            var select = db.Soldiers.Find(id);
-
-
-            return File(select.RouteFile, "application/pdf");
+            return View();
         }
     }
 }

@@ -345,37 +345,7 @@ namespace Capstone.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult AddGoogleMap(Soldier soldier, HttpPostedFileBase upload)
         {
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    if (upload != null && upload.ContentLength > 0)
-                    {
-                        var da31 = new Models.File
-                        {
-                            FileName = System.IO.Path.GetFileName(upload.FileName),
-                            FileType = FileType.DaForms,
-                            ContentType = upload.ContentType
-                        };
-                        using (var reader = new System.IO.BinaryReader(upload.InputStream))
-                        {
-                            da31.Content = reader.ReadBytes(upload.ContentLength);
-                        }
-                        soldier.Files = new List<Models.File> { da31 };
-                        soldier.RouteFile = upload.FileName;
-                        soldier.GoogleMap = true;
-                        db.Entry(soldier).State = EntityState.Modified;
-                        db.SaveChanges();
-                    }
-                }
-                catch (RetryLimitExceededException)
-                {
-                    ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
-                }
-
-
-                return RedirectToAction("Index");
-            }
+            
             return View();
         }
 
