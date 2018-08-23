@@ -15,6 +15,9 @@
             @Html.DisplayNameFor(model => model.LastName)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Rank)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.SocialSecurityNumber)
         </th>
         <th>
@@ -49,12 +52,15 @@
 
     @foreach (var item in Model)
     {
-    <tr>
+    <tr class="success">
         <td>
             @Html.DisplayFor(modelItem => item.FirstName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rank)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.SocialSecurityNumber)

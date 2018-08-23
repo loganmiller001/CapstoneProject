@@ -213,51 +213,51 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201808142037304_InitialSeedingofDatabasewithRoles.cs" />
-    <Compile Include="Migrations\201808142037304_InitialSeedingofDatabasewithRoles.Designer.cs">
+    <Compile Include="Models\Migrations\201808142037304_InitialSeedingofDatabasewithRoles.cs" />
+    <Compile Include="Models\Migrations\201808142037304_InitialSeedingofDatabasewithRoles.Designer.cs">
       <DependentUpon>201808142037304_InitialSeedingofDatabasewithRoles.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201808151218194_SeedingDatabase.cs" />
-    <Compile Include="Migrations\201808151218194_SeedingDatabase.Designer.cs">
+    <Compile Include="Models\Migrations\201808151218194_SeedingDatabase.cs" />
+    <Compile Include="Models\Migrations\201808151218194_SeedingDatabase.Designer.cs">
       <DependentUpon>201808151218194_SeedingDatabase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201808161254164_AddingFileToDatabase.cs" />
-    <Compile Include="Migrations\201808161254164_AddingFileToDatabase.Designer.cs">
+    <Compile Include="Models\Migrations\201808161254164_AddingFileToDatabase.cs" />
+    <Compile Include="Models\Migrations\201808161254164_AddingFileToDatabase.Designer.cs">
       <DependentUpon>201808161254164_AddingFileToDatabase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201808171443438_AddedBoolPropertiesforDA31andLESForms.cs" />
-    <Compile Include="Migrations\201808171443438_AddedBoolPropertiesforDA31andLESForms.Designer.cs">
+    <Compile Include="Models\Migrations\201808171443438_AddedBoolPropertiesforDA31andLESForms.cs" />
+    <Compile Include="Models\Migrations\201808171443438_AddedBoolPropertiesforDA31andLESForms.Designer.cs">
       <DependentUpon>201808171443438_AddedBoolPropertiesforDA31andLESForms.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201808171550244_AddedPropertiesForTravelDocumentsinSoldier.cs" />
-    <Compile Include="Migrations\201808171550244_AddedPropertiesForTravelDocumentsinSoldier.Designer.cs">
+    <Compile Include="Models\Migrations\201808171550244_AddedPropertiesForTravelDocumentsinSoldier.cs" />
+    <Compile Include="Models\Migrations\201808171550244_AddedPropertiesForTravelDocumentsinSoldier.Designer.cs">
       <DependentUpon>201808171550244_AddedPropertiesForTravelDocumentsinSoldier.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201808171714168_AddedSoldierPropertyBoolLeaveStatus.cs" />
-    <Compile Include="Migrations\201808171714168_AddedSoldierPropertyBoolLeaveStatus.Designer.cs">
+    <Compile Include="Models\Migrations\201808171714168_AddedSoldierPropertyBoolLeaveStatus.cs" />
+    <Compile Include="Models\Migrations\201808171714168_AddedSoldierPropertyBoolLeaveStatus.Designer.cs">
       <DependentUpon>201808171714168_AddedSoldierPropertyBoolLeaveStatus.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201808211357072_CreatedDateTmeProperties.cs" />
-    <Compile Include="Migrations\201808211357072_CreatedDateTmeProperties.Designer.cs">
+    <Compile Include="Models\Migrations\201808211357072_CreatedDateTmeProperties.cs" />
+    <Compile Include="Models\Migrations\201808211357072_CreatedDateTmeProperties.Designer.cs">
       <DependentUpon>201808211357072_CreatedDateTmeProperties.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201808212052455_MadeFileandBooleanPropForGoogleMapFile.cs" />
-    <Compile Include="Migrations\201808212052455_MadeFileandBooleanPropForGoogleMapFile.Designer.cs">
+    <Compile Include="Models\Migrations\201808212052455_MadeFileandBooleanPropForGoogleMapFile.cs" />
+    <Compile Include="Models\Migrations\201808212052455_MadeFileandBooleanPropForGoogleMapFile.Designer.cs">
       <DependentUpon>201808212052455_MadeFileandBooleanPropForGoogleMapFile.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201808221333485_TookOutLatandLongPropertiesinSoldierModel.cs" />
-    <Compile Include="Migrations\201808221333485_TookOutLatandLongPropertiesinSoldierModel.Designer.cs">
+    <Compile Include="Models\Migrations\201808221333485_TookOutLatandLongPropertiesinSoldierModel.cs" />
+    <Compile Include="Models\Migrations\201808221333485_TookOutLatandLongPropertiesinSoldierModel.Designer.cs">
       <DependentUpon>201808221333485_TookOutLatandLongPropertiesinSoldierModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201808221905109_AddStartandEndPointForSoldier.cs" />
-    <Compile Include="Migrations\201808221905109_AddStartandEndPointForSoldier.Designer.cs">
+    <Compile Include="Models\Migrations\201808221905109_AddStartandEndPointForSoldier.cs" />
+    <Compile Include="Models\Migrations\201808221905109_AddStartandEndPointForSoldier.Designer.cs">
       <DependentUpon>201808221905109_AddStartandEndPointForSoldier.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201808231234267_TookOutStartandEndpointProperties.cs" />
-    <Compile Include="Migrations\201808231234267_TookOutStartandEndpointProperties.Designer.cs">
+    <Compile Include="Models\Migrations\201808231234267_TookOutStartandEndpointProperties.cs" />
+    <Compile Include="Models\Migrations\201808231234267_TookOutStartandEndpointProperties.Designer.cs">
       <DependentUpon>201808231234267_TookOutStartandEndpointProperties.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CompanyCommander.cs" />
     <Compile Include="Models\Email.cs" />
@@ -917,37 +917,37 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201808142037304_InitialSeedingofDatabasewithRoles.resx">
+    <EmbeddedResource Include="Models\Migrations\201808142037304_InitialSeedingofDatabasewithRoles.resx">
       <DependentUpon>201808142037304_InitialSeedingofDatabasewithRoles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808151218194_SeedingDatabase.resx">
+    <EmbeddedResource Include="Models\Migrations\201808151218194_SeedingDatabase.resx">
       <DependentUpon>201808151218194_SeedingDatabase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808161254164_AddingFileToDatabase.resx">
+    <EmbeddedResource Include="Models\Migrations\201808161254164_AddingFileToDatabase.resx">
       <DependentUpon>201808161254164_AddingFileToDatabase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808171443438_AddedBoolPropertiesforDA31andLESForms.resx">
+    <EmbeddedResource Include="Models\Migrations\201808171443438_AddedBoolPropertiesforDA31andLESForms.resx">
       <DependentUpon>201808171443438_AddedBoolPropertiesforDA31andLESForms.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808171550244_AddedPropertiesForTravelDocumentsinSoldier.resx">
+    <EmbeddedResource Include="Models\Migrations\201808171550244_AddedPropertiesForTravelDocumentsinSoldier.resx">
       <DependentUpon>201808171550244_AddedPropertiesForTravelDocumentsinSoldier.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808171714168_AddedSoldierPropertyBoolLeaveStatus.resx">
+    <EmbeddedResource Include="Models\Migrations\201808171714168_AddedSoldierPropertyBoolLeaveStatus.resx">
       <DependentUpon>201808171714168_AddedSoldierPropertyBoolLeaveStatus.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808211357072_CreatedDateTmeProperties.resx">
+    <EmbeddedResource Include="Models\Migrations\201808211357072_CreatedDateTmeProperties.resx">
       <DependentUpon>201808211357072_CreatedDateTmeProperties.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808212052455_MadeFileandBooleanPropForGoogleMapFile.resx">
+    <EmbeddedResource Include="Models\Migrations\201808212052455_MadeFileandBooleanPropForGoogleMapFile.resx">
       <DependentUpon>201808212052455_MadeFileandBooleanPropForGoogleMapFile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808221333485_TookOutLatandLongPropertiesinSoldierModel.resx">
+    <EmbeddedResource Include="Models\Migrations\201808221333485_TookOutLatandLongPropertiesinSoldierModel.resx">
       <DependentUpon>201808221333485_TookOutLatandLongPropertiesinSoldierModel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808221905109_AddStartandEndPointForSoldier.resx">
+    <EmbeddedResource Include="Models\Migrations\201808221905109_AddStartandEndPointForSoldier.resx">
       <DependentUpon>201808221905109_AddStartandEndPointForSoldier.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808231234267_TookOutStartandEndpointProperties.resx">
+    <EmbeddedResource Include="Models\Migrations\201808231234267_TookOutStartandEndpointProperties.resx">
       <DependentUpon>201808231234267_TookOutStartandEndpointProperties.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
