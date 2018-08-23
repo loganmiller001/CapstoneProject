@@ -59,5 +59,32 @@ namespace Capstone.Controllers
 
             return RedirectToAction("roster");
         }
+
+
+        public ActionResult ViewLES(int? id)
+        {
+            var select = db.Soldiers.Find(id);
+
+
+            return File(select.LES, "application/pdf");
+        }
+
+
+        public ActionResult ViewDA31(int? id)
+        {
+            var select = db.Soldiers.Find(id);
+
+
+            return File(select.LeaveForm, "application/pdf");
+        }
+
+
+        public ActionResult ViewTravelDocs(int? id)
+        {
+            var select = db.Soldiers.Find(id);
+
+
+            return File(select.TravelFileName, "application/pdf");
+        }
     }
 }
