@@ -66,10 +66,6 @@ namespace Capstone.Models
         [DisplayName("End Date")]
         public DateTime? EndDate { get; set; }
 
-        public double StartPoint { get; set; }
-
-        public double EndPoint { get; set; }
-
     }
     
 }

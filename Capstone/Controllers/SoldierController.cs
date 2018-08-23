@@ -346,12 +346,7 @@ namespace Capstone.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult AddGoogleMap(Soldier soldier)
         {
-            var data = (from d in db.Soldiers.Where(d => d.SoldierId == soldier.SoldierId) select d).FirstOrDefault();
-            data.StartPoint = soldier.StartPoint;
-            data.EndPoint = soldier.EndPoint;
-            db.Entry(data).State = EntityState.Modified;
-            db.SaveChanges();
-            return View(data);
+            return View();
         }
 
         public ActionResult SetLeaveDays(int? id)

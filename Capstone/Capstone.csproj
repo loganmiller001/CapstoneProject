@@ -253,6 +253,10 @@
     <Compile Include="Migrations\201808221905109_AddStartandEndPointForSoldier.Designer.cs">
       <DependentUpon>201808221905109_AddStartandEndPointForSoldier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808231234267_TookOutStartandEndpointProperties.cs" />
+    <Compile Include="Migrations\201808231234267_TookOutStartandEndpointProperties.Designer.cs">
+      <DependentUpon>201808231234267_TookOutStartandEndpointProperties.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CompanyCommander.cs" />
@@ -889,6 +893,7 @@
     <Content Include="Views\CompanyCommander\CreateLeave.cshtml" />
     <Content Include="Views\Soldier\SetLeaveDays.cshtml" />
     <Content Include="Views\FirstSergeant\ViewRoute.cshtml" />
+    <Content Include="Views\Shared\SoldierLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -938,6 +943,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808221905109_AddStartandEndPointForSoldier.resx">
       <DependentUpon>201808221905109_AddStartandEndPointForSoldier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808231234267_TookOutStartandEndpointProperties.resx">
+      <DependentUpon>201808231234267_TookOutStartandEndpointProperties.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
