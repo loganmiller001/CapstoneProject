@@ -12,12 +12,14 @@ namespace Capstone.Controllers
     public class FirstSergeantController : Controller
     {
         ApplicationDbContext db = new ApplicationDbContext();
-        // GET: FirstSergeant
+
+        
         public ActionResult Roster()
         {
             return View(db.Soldiers.ToList());
         }
 
+        
         public ActionResult ViewLES(int? id)
         {
             var select = db.Soldiers.Find(id);
@@ -26,6 +28,7 @@ namespace Capstone.Controllers
             return File(select.LES, "application/pdf");
         }
 
+        
         public ActionResult ViewDA31(int? id)
         {
             var select = db.Soldiers.Find(id);
@@ -34,6 +37,7 @@ namespace Capstone.Controllers
             return File(select.LeaveForm, "application/pdf");
         }
 
+        
         public ActionResult ViewTravelDocs(int? id)
         {
             var select = db.Soldiers.Find(id);
@@ -42,6 +46,7 @@ namespace Capstone.Controllers
             return File(select.TravelFileName, "application/pdf");
         }
 
+        
         public ActionResult ApproveDenyLeave(int? id)
         {
             if (id == null)
@@ -68,6 +73,7 @@ namespace Capstone.Controllers
             return RedirectToAction("Roster");
         }
 
+        
         public ActionResult ViewRoute(int? id)
         {
             if (id == null)

@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Capstone.Models.CompanyCommander>
+@{
+    ViewBag.Title = "HomePage";
+}
+
+<h2>Home Portal</h2>
+@Html.HiddenFor(model => model.CommanderId)
+@Html.HiddenFor(model => model.ApplicationUserId)
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.ActionLink("Set Leave Days", "CreateLeave", new { id = item.CommanderId })
+        </td>
+    </tr>
+    }
+   </table>
+

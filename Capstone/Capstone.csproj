@@ -894,6 +894,9 @@
     <Content Include="Views\Soldier\SetLeaveDays.cshtml" />
     <Content Include="Views\FirstSergeant\ViewRoute.cshtml" />
     <Content Include="Views\Shared\SoldierLayout.cshtml" />
+    <Content Include="Views\Shared\FirstSergeantLayout.cshtml" />
+    <Content Include="Views\Shared\CommanderLayout.cshtml" />
+    <Content Include="Views\CompanyCommander\HomePage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

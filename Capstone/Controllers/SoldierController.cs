@@ -18,7 +18,8 @@ namespace Capstone.Controllers
     public class SoldierController : Controller
     {
         ApplicationDbContext db = new ApplicationDbContext();
-        // GET: Soldier
+
+        [Authorize(Roles = "Soldier")]
         public ActionResult Index()
         {
             var userId = User.Identity.GetUserId();
@@ -27,15 +28,13 @@ namespace Capstone.Controllers
             return View(soldierInfo);
         }
 
-        // GET: Customers/Create
+        
         public ActionResult CreateProfile()
         {
             return View();
         }
 
-        // POST: Soldiers/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CreateProfile([Bind(Include = "SoldierId,FirstName,LastName,Rank,SocialSecurityNumber,UnitNumber,Division,Leadership")] Soldier soldier)
@@ -52,7 +51,7 @@ namespace Capstone.Controllers
         }
 
 
-        // GET: Customers/Edit/5
+        [Authorize(Roles = "Soldier")]
         public ActionResult EditPersonalInformation(int? id)
         {
             if (id == null)
@@ -92,6 +91,7 @@ namespace Capstone.Controllers
             base.Dispose(disposing);
         }
 
+        [Authorize(Roles = "Soldier")]
         public ActionResult SubmitPacket(int? id)
         {
             if (id == null)
@@ -116,7 +116,7 @@ namespace Capstone.Controllers
             return RedirectToAction("Index");
         }
 
-
+        [Authorize(Roles = "Soldier")]
         public ActionResult AddDA31(int? id)
         {
             if (id == null)
@@ -170,6 +170,7 @@ namespace Capstone.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Soldier")]
         public ActionResult SoldierInformation(int? id)
         {
             if(id == null)
@@ -185,6 +186,7 @@ namespace Capstone.Controllers
             return View(soldier);
         }
 
+        [Authorize(Roles = "Soldier")]
         public ActionResult DisplayDA31(int? id)
         {
             var select = db.Soldiers.Find(id);
@@ -193,6 +195,7 @@ namespace Capstone.Controllers
             return File(select.LeaveForm, "application/pdf");
         }
 
+        [Authorize(Roles = "Soldier")]
         public ActionResult AddLES(int? id)
         {
             if (id == null)
@@ -245,6 +248,7 @@ namespace Capstone.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Soldier")]
         public ActionResult DisplayLES(int? id)
         {
             var select = db.Soldiers.Find(id);
@@ -253,6 +257,7 @@ namespace Capstone.Controllers
             return File(select.LES, "application/pdf");
         }
 
+        [Authorize(Roles = "Soldier")]
         public ActionResult AddTravelFile(int? id)
         {
             if (id == null)
@@ -305,6 +310,7 @@ namespace Capstone.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Soldier")]
         public ActionResult DisplayTravelDocs(int? id)
         {
             var select = db.Soldiers.Find(id);
@@ -313,22 +319,8 @@ namespace Capstone.Controllers
             return File(select.TravelFileName, "application/pdf");
         }
 
+        [Authorize(Roles = "Soldier")]
         public ActionResult GoogleMap(int? id)
-        {
-
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Soldier soldier = db.Soldiers.Find(id);
-            if (soldier == null)
-            {
-                return HttpNotFound();
-            }
-            return View(soldier);
-        }
-
-        public ActionResult AddGoogleMap(int? id)
         {
             if (id == null)
             {
@@ -349,6 +341,7 @@ namespace Capstone.Controllers
             return View();
         }
 
+        [Authorize(Roles ="Soldier")]
         public ActionResult SetLeaveDays(int? id)
         {
             if (id == null)

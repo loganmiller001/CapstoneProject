@@ -1,6 +1,6 @@
 ﻿@model Capstone.Models.Soldier
 @{
-   ViewBag.Title = "ApproveDenyLeave";
+    ViewBag.Title = "ApproveDenyLeave";
 }
 
 <h2>Is the Leave Packet Complete?</h2>
@@ -19,10 +19,13 @@
     @Html.HiddenFor(model => model.Leadership)
     @Html.HiddenFor(model => model.LeaveForm)
     @Html.HiddenFor(model => model.LeaveFormSubmission)
+    @Html.HiddenFor(model => model.LES)
     @Html.HiddenFor(model => model.LESSubmission)
     @Html.HiddenFor(model => model.TravelFileName)
     @Html.HiddenFor(model => model.TravelInfo)
     @Html.HiddenFor(model => model.Rank)
+    @Html.HiddenFor(model => model.StartDate)
+    @Html.HiddenFor(model => model.EndDate)
 
     @Html.DropDownListFor(m => m.PacketStatus, new SelectList(
         new[] {

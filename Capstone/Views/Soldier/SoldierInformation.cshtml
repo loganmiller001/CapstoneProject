@@ -62,14 +62,14 @@
     </dt>
 
     <dd>
-        @Html.DisplayFor(model => model.StartDate)
+        @Model.StartDate.Value.ToShortDateString()
     </dd>
     <dt>
         @Html.DisplayNameFor(model => model.EndDate)
     </dt>
 
     <dd>
-        @Html.DisplayFor(model => model.EndDate)
+        @Model.EndDate.Value.ToShortDateString()
     </dd>
     <dt>
         @Html.DisplayNameFor(model => model.LeaveFormSubmission)

@@ -9,7 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Capstone.Models;
-
+using System.Web.Security;
 namespace Capstone.Controllers
 {
     [Authorize]
@@ -79,6 +79,19 @@ namespace Capstone.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+                    ApplicationUser user = await UserManager.FindAsync(model.Email, model.Password);
+                    if(user.UserRole == "Soldier")
+                    {
+                        return RedirectToAction("Index", "Soldier");
+                    }
+                    if(user.UserRole == "First Sergeant")
+                    {
+                        return RedirectToAction("Roster", "FirstSergeant");
+                    }
+                    if(user.UserRole =="Company Commander")
+                    {
+                        return RedirectToAction("Roster", "CompanyCommander");
+                    }
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
